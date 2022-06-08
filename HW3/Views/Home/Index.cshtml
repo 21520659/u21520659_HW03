@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    @ViewBag.Message
+</div>
+
+<div class="row jumbotron">
+    
+    <div class="col-md-8">
+        <h2>Chauke Media</h2>
+        <p>Chauke Media Pty(Ltd) is a performing digital marketing company that provides comprehensive advertising and analysis servies to media and advertising agencies. It strives in results, increasing lead generation and enhancing brand newness and awareness. This website helps clients upload different folders such as documents, images and videos. </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Select option</h2>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            <form>
+                <div class="form-group">
+                    @Html.RadioButton("FileType", "Document")<span>Documents</span><br>
+                </div>
+                <div class="form-group">
+                    @Html.RadioButton("FileType", "Image")<span>Images</span><br>
+                </div>
+                <div class="form-group form-check">
+                    @Html.RadioButton("FileType", "Video")<span>Video</span><br>
+                </div>
+                <div class="form-group form-check">
+                    <input type="file" name="file" id="file">
+                </div>
+
+                @*/*
+                    */*@
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        }
+    </div>
+
+</div>
